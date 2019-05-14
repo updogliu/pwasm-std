@@ -1,5 +1,7 @@
 //! Standard library for parity wasm programs
 
+#![allow(stable_features)]
+
 #![cfg_attr(not(feature = "std"), no_std)]
 #![cfg_attr(feature = "strict", deny(warnings))]
 #![feature(lang_items)]
@@ -50,9 +52,9 @@ mod crypto;
 
 mod panic;
 
-#[no_mangle]
-#[cfg(not(feature = "std"))]
-pub use panic::panic_fmt;
+// #[no_mangle]
+// #[cfg(not(feature = "std"))]
+// pub use panic::panic_fmt;
 
 #[no_mangle]
 #[cfg(not(feature = "std"))]
